@@ -17,7 +17,7 @@ session=Session(engine)
 app= Flask(__name__)
 
 @app.rount("/")
-def welcome()
+def welcome():
     return(
         '''
         Welcome to the Climate Analysis API!
@@ -27,3 +27,4 @@ def welcome()
         /api/v1.0/tobs
         /api/v1.0/temp/start/end
         ''')
+
