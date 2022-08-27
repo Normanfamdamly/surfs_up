@@ -5,7 +5,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import FLASK, jsonify
+from flask import Flask, jsonify
 
 engine=create_engine("sqlite://hawaii.sqlite")
 Base = automap_base()
@@ -14,7 +14,7 @@ Measurement=Base.classes.measurement
 Statation=Base.classes.station
 session=Session(engine)
 
-app= Flask(__name__)
+app= FLASK(__name__)
 
 @app.rount("/")
 def welcome():
@@ -27,4 +27,6 @@ def welcome():
         /api/v1.0/tobs
         /api/v1.0/temp/start/end
         ''')
+if __name__ == "__main__":
+    app.run(debug=True)
 
