@@ -17,7 +17,7 @@ session=Session(engine)
 
 app= Flask(__name__)
 
-@app.rount("/")
+@app.route("/")
 def welcome():
     return(
         '''
